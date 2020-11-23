@@ -39,9 +39,13 @@
                                     </button>
                                     <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="qdA-DU-Yui">
                                         <rect key="frame" x="0.0" y="108.5" width="320" height="320"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="qdA-DU-Yui" secondAttribute="height" multiplier="1:1" id="e3J-wz-Fcc"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="hzI-Cm-nM2" appends="YES" id="8Jv-wl-q8c"/>
+                                        </connections>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -60,15 +64,21 @@
                     <connections>
                         <outlet property="mealNameLabel" destination="EP9-Iv-0CM" id="WEJ-ds-S0g"/>
                         <outlet property="nameTextField" destination="LBJ-OQ-iqu" id="0It-fU-edE"/>
+                        <outlet property="photoImageView" destination="qdA-DU-Yui" id="wHI-Uz-8hM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hzI-Cm-nM2">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="BYZ-38-t0r" id="SLg-kh-cTX"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="137.68115942028987" y="89.732142857142847"/>
         </scene>
     </scenes>
     <resources>
-        <image name="defaultPhoto" width="2304" height="1296"/>
+        <image name="defaultPhoto" width="275" height="183.5"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
